@@ -1,4 +1,4 @@
-const useTimeoutCode = `import { useEffect, useRef } from "react";
+export const useTimeoutCode = `import { useEffect, useRef } from "react";
 
 function useTimeout(callback: VoidFunction, delayMs: number) {
     const ref = useRef<VoidFunction>();
@@ -24,7 +24,7 @@ function useTimeout(callback: VoidFunction, delayMs: number) {
   
   export default useTimeout;`;
 
-const goodUseTimeoutExample = `import { useState } from "react";
+export const goodUseTimeoutExample = `import { useState } from "react";
 
 export default function App() {
     const [count, setCount] = useState(0);
@@ -47,7 +47,7 @@ export default function App() {
 }
 `;
 
-const normalTimeout = `import { useState, useEffect } from "react";
+export const normalTimeout = `import { useState, useEffect } from "react";
 
 export default function App() {
     const [count, setCount] = useState(0);
@@ -75,7 +75,7 @@ export default function App() {
 }
 `;
 
-const normalTimeoutFixed = `import { useState, useEffect, useRef } from "react";
+export const normalTimeoutFixed = `import { useState, useEffect, useRef } from "react";
 
 export default function App() {
     const [count, setCount] = useState(0);
@@ -110,10 +110,3 @@ export default function App() {
     )
 }
 `;
-
-export {
-  useTimeoutCode,
-  goodUseTimeoutExample,
-  normalTimeout,
-  normalTimeoutFixed,
-};

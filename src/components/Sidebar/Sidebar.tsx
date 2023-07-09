@@ -24,7 +24,7 @@ export default function Sidebar({ isOpen, setIsOpen }: ISidebar) {
     if (debouncedSearch === "") return knowledges;
     return knowledges.filter(
       (knowledge) =>
-        calculateSimilarity(debouncedSearch, knowledge.title) >= 0.75
+        calculateSimilarity(debouncedSearch, knowledge.title) >= 0.7
     );
   }, [debouncedSearch]);
 
