@@ -6,7 +6,7 @@ export default function Main({
   ...rest
 }: HTMLAttributes<HTMLElement>) {
   return (
-    <main {...rest} className={`content max-w-8xl px-6 py-4 ${className}`}>
+    <main {...rest} className={`max-w-8xl mx-auto px-6 py-4 ${className}`}>
       {children}
     </main>
   );

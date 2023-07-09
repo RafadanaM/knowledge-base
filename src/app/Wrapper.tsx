@@ -20,12 +20,16 @@ function Wrapper({ children }: IWrapper) {
     <>
       <Sidebar isOpen={isSidebarOpen} setIsOpen={updateSidebarOpen} />
       <Navbar isOpen={isSidebarOpen} setIsOpen={updateSidebarOpen} />
-      <Main
-        className={`transition-[margin] ${isSidebarOpen ? "lg:ml-64" : ""}`}
+      <div
+        className={`content transition-[margin-left] ${
+          isSidebarOpen ? "lg:ml-64" : ""
+        }`}
       >
-        <BackButton />
-        {children}
-      </Main>
+        <Main>
+          <BackButton />
+          {children}
+        </Main>
+      </div>
     </>
   );
 }

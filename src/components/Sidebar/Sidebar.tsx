@@ -50,7 +50,7 @@ export default function Sidebar({ isOpen, setIsOpen }: ISidebar) {
           ))}
         </ul>
       </aside>
-      {isOpen ? <Overlay /> : null}
+      {isOpen ? <Overlay onClick={() => setIsOpen(false)} /> : null}
     </>
   );
 }
