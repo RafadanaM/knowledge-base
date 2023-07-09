@@ -2,26 +2,61 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
 
-@media (prefers-color-scheme: dark) {
+@layer base {
+
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
+    --text-rgb: 36, 36, 36;
+    --foreground-rgb: 240, 241, 242;
+    --background-rgb: 255, 255, 255;
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --text-rgb: 255, 255, 255;
+      /* --foreground-rgb: 255, 255, 255; */
+      --background-rgb: 36, 36, 36;
+
+    }
+  }
+
+  html {
+    height: 100%;
+  }
+
+  body {
+    min-height: 100%;
+    color: rgb(var(--text-rgb));
+    background: rgb(var(--background-rgb))
+  }
+
+  code {
+    background: rgb(var(--foreground-rgb));
+
+  }
+
+  .layout {
+    display: grid;
+    grid-template-areas:
+      "sidebar nav"
+      "sidebar content";
+
+
+    grid-template-columns: auto minmax(0, 1fr);
+    grid-template-rows: auto minmax(0, 1fr);
+  }
+
+  .nav {
+    grid-area: nav;
+  }
+
+  .sidebar {
+    grid-area: sidebar;
+  }
+
+  .content {
+    grid-area: content;
+  }
+
 }
