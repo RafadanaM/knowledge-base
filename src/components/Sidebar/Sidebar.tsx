@@ -6,6 +6,7 @@ import calculateSimilarity from "../../utils/calculateSimilarity";
 import Search from "../Search/Search";
 import useDebounce from "../../hooks/useDebounce";
 import Overlay from "./Overlay";
+import { usePathname } from "next/navigation";
 
 interface ISidebar {
   isOpen: boolean;
@@ -15,6 +16,7 @@ interface ISidebar {
 export default function Sidebar({ isOpen, setIsOpen }: ISidebar) {
   const [search, setSearch] = useState("");
   const debouncedSearch = useDebounce(search);
+  const pathname = usePathname();
 
   function handleSearch(e: ChangeEvent<HTMLInputElement>) {
     setSearch(e.target.value.trim());
@@ -31,20 +33,26 @@ export default function Sidebar({ isOpen, setIsOpen }: ISidebar) {
   return (
     <>
       <aside
-        className={`sidebar bg-foreground w-64 h-screen flex-shrink-0 px-4 py-2 fixed top-0 left-0 z-40 transition-[margin] lg:shadow-[inset_0_0_8px_rgba(128,128,128,0.3)] ${
+        className={`sidebar fixed top-0 z-40 h-screen w-64 bg-secondary px-4 py-2 transition-[margin] lg:sticky lg:shadow-[inset_0_0_8px_rgba(128,128,128,0.3)] ${
           isOpen ? "ml-0" : "-ml-64"
         }`}
       >
         <IconButton
           src="/x.svg"
           alt="close sidebar"
+          className="-ml-2"
           onClick={() => setIsOpen(false)}
         />
 
         <Search onChange={handleSearch} />
-        <ul className="flex flex-col gap-2 mt-6">
+
+        <ul className="mt-4 flex flex-col gap-1">
           {filteredKnowledges.map((knowledge) => (
-            <SidebarLink key={knowledge.slug} href={knowledge.slug}>
+            <SidebarLink
+              key={knowledge.slug}
+              href={knowledge.slug}
+              isActive={pathname === knowledge.slug}
+            >
               {knowledge.title}
             </SidebarLink>
           ))}

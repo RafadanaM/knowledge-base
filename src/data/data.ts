@@ -5,15 +5,19 @@ interface Knowledge {
 
 export const knowledges: Knowledge[] = [
   {
-    slug: "use-timeout",
+    slug: "/use-timeout",
     title: "useTimeout",
   },
   {
-    slug: "use-debounce-value",
+    slug: "/use-debounce-value",
     title: "useDebounceValue",
   },
   {
-    slug: "use-debounce-fn",
+    slug: "/use-debounce-fn",
     title: "useDebounceFn",
+  },
+  {
+    slug: "/fuzzy-search",
+    title: "Fuzzy Search",
   },
 ];

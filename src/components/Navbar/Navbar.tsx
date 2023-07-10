@@ -16,17 +16,13 @@ export default function Navbar({ isOpen, setIsOpen }: INavbar) {
   }
 
   return (
-    <header
-      className={`nav sticky top-0 h-16 bg-white border-b border-b-gray-300 z-20 transition-[margin] ${
-        isOpen ? "lg:ml-64" : ""
-      }`}
-    >
+    <header className="nav sticky top-0 z-20 h-16 border-b border-b-foreground bg-white transition-[margin]">
       <div
         className="absolute -bottom-px left-0 h-0.5 bg-red-400"
         style={{ width: `${calcWidth(scrollY)}%` }}
       />
 
-      <nav className="relative flex items-center justify-center h-full max-w-8xl w-full mx-auto py-2 px-4">
+      <nav className="relative mx-auto flex h-full  w-full max-w-8xl items-center justify-center px-4 py-2">
         <div className="absolute left-4">
           <IconButton
             src="/menu.svg"

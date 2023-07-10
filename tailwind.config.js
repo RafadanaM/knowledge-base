@@ -1,10 +1,12 @@
 /** @type {import('tailwindcss').Config} */
+const colors = require("tailwindcss/colors");
 module.exports = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  darkMode: "media",
   theme: {
     extend: {
       backgroundImage: {
@@ -16,6 +18,9 @@ module.exports = {
         "8xl": "100rem",
       },
       colors: {
+        primary: colors.orange[400],
+        secondary: "#F0F1F2",
+        black: "#242424",
         foreground: "#f0f1f2",
         button: "#808080",
       },

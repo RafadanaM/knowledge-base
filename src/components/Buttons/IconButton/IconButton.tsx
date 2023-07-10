@@ -10,7 +10,7 @@ export default function IconButton({
   return (
     <button
       {...rest}
-      className={`relative rounded-full overflow-hidden p-2 before:absolute before:left-0 before:right-0 before:top-0 before:bottom-0 before:transition-colors before:bg-button before:bg-opacity-0 hover:before:bg-opacity-20 ${className}`}
+      className={`relative overflow-hidden rounded-full p-2 before:absolute before:bottom-0 before:left-0 before:right-0 before:top-0 before:bg-button before:bg-opacity-0 before:transition-colors hover:before:bg-opacity-20 ${className}`}
     >
       <Icon src={src} alt={alt} />
     </button>

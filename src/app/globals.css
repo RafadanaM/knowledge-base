@@ -2,38 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer base {
-
-  :root {
+  /* :root {
     --text-rgb: 36, 36, 36;
     --foreground-rgb: 240, 241, 242;
     --background-rgb: 255, 255, 255;
-
   }
 
   @media (prefers-color-scheme: dark) {
     :root {
       --text-rgb: 255, 255, 255;
-      /* --foreground-rgb: 255, 255, 255; */
+      --foreground-rgb: 255, 255, 255;
       --background-rgb: 36, 36, 36;
-
     }
-  }
+  } */
 
   html {
-    height: 100%;
+    min-height: 100vh;
   }
 
   body {
-    min-height: 100%;
-    color: rgb(var(--text-rgb));
-    background: rgb(var(--background-rgb))
+    @apply h-full bg-white text-black dark:bg-black dark:text-white;
   }
 
   code {
-    background: rgb(var(--foreground-rgb));
-
+    @apply bg-secondary;
   }
 
   .layout {
@@ -41,7 +34,6 @@
     grid-template-areas:
       "sidebar nav"
       "sidebar content";
-
 
     grid-template-columns: auto minmax(0, 1fr);
     grid-template-rows: auto minmax(0, 1fr);
@@ -58,5 +50,4 @@
   .content {
     grid-area: content;
   }
-
 }

@@ -2,6 +2,6 @@ import { InputHTMLAttributes } from "react";
 
 export default function Search(props: InputHTMLAttributes<HTMLInputElement>) {
   return (
-    <input type="text" className="shadow-lg mt-5 px-2 py-1 w-full" {...props} />
+    <input type="text" className="mt-2 w-full px-2 py-1 shadow-lg" {...props} />
   );
 }

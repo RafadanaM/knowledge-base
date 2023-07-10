@@ -20,7 +20,7 @@ export default function Code({ title, code, language = "typescript" }: ICode) {
 
   return (
     <>
-      <h2 className="text-2xl font-semibold mt-5">{title}</h2>
+      <h2 className="mt-5 text-2xl font-semibold">{title}</h2>
       <pre className={`language-${language}`} tabIndex={0}>
         <code className={`language-${language}`}>{code}</code>
       </pre>

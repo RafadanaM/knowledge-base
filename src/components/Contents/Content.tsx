@@ -8,10 +8,10 @@ interface IContent {
 export default function Content({ title, children }: IContent) {
   return (
     <>
-      <h1 className="inline-block ml-2 text-4xl font-semibold align-top py-px">
+      <h1 className="ml-2 inline-block py-px align-top text-4xl font-semibold">
         {title}
       </h1>
-      <span className="block h-0.5 bg-gray-200 mt-3 mb-6" />
+      <span className="mb-6 mt-3 block h-0.5 bg-secondary" />
       <article className="[&>p]:my-5">{children}</article>
     </>
   );
